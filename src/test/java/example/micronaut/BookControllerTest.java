@@ -69,7 +69,7 @@ class BookControllerTest {
         }
 
         System.out.println(response);
-        Assertions.assertTrue(response.contains("book[0]: size must be between 0 and 10"));
+        Assertions.assertTrue(response.contains("books[0]: size must be between 0 and 10"));
     }
 
     @Test

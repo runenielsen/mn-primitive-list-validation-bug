@@ -7,6 +7,8 @@ import io.micronaut.serde.annotation.Serdeable;
 import jakarta.annotation.Generated;
 import jakarta.validation.Valid;
 import jakarta.validation.constraints.NotNull;
+import jakarta.validation.constraints.Pattern;
+import jakarta.validation.constraints.Size;
 
 import java.util.List;
 import java.util.Objects;
@@ -25,9 +27,8 @@ public class BooksContainer {
     public static final String JSON_PROPERTY_BOOKS = "books";
 
     @NotNull
-    @Valid
     @JsonProperty(JSON_PROPERTY_BOOKS)
-    private List<String> books;
+    private List<@Pattern(regexp = "[a-zA-Z ]+") @Size(max = 10) String> books;
 
     public BooksContainer(List<String> books) {
         this.books = books;

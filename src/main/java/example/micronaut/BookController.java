@@ -45,9 +45,8 @@ public class BookController {
     @Consumes({"application/json"})
     public void addBooks(
             @NotNull
-            @Valid
             @Body
-            List<String> book
+            List<@Pattern(regexp = "[a-zA-Z ]+") @Size(max = 10) String> books
     ) {
 
     }
